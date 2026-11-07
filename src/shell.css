@@ -65,7 +65,7 @@ pre{overflow:auto;background:#f6f8fa;border:1px solid #e5e7eb;border-radius:6px;
 .js-enabled .menu-toggle{display:flex;}
 .js-enabled .sidebar-head{padding-top:64px;}
 .js-enabled .page-section{padding-top:64px;}
-.js-enabled .sidebar{position:fixed;inset:0 auto 0 0;width:320px;height:100dvh;max-height:none;border-right:1px solid var(--shell-border);transition:transform .2s ease;}
+.js-enabled .sidebar{margin:0;position:fixed;inset:0 auto 0 0;width:320px;height:100dvh;max-height:none;border-right:1px solid var(--shell-border);transition:transform .2s ease;}
 .js-enabled .nav-list{max-height:none;min-height:0;flex:1;}
 .js-enabled.menu-collapsed .sidebar{transform:translateX(-100%);visibility:hidden;}
 .js-enabled.menu-collapsed .content-shell{margin-left:0;}
