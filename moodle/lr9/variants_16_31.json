@@ -1,0 +1,82 @@
+{
+  "16": [
+    "\\frac{\\partial(\\rho u)}{\\partial x}+\\frac{\\partial(\\rho v)}{\\partial y}=0",
+    "\\rho u\\frac{\\partial u}{\\partial x}+\\rho v\\frac{\\partial u}{\\partial y}=-\\frac{\\partial p}{\\partial x}+\\mu\\frac{\\partial^2u}{\\partial y^2}",
+    "Q(x)=\\int_0^{h(x)}\\rho u(x,y)\\,dy"
+  ],
+  "17": [
+    "\\frac{d}{dx}\\left(k(x)\\frac{dT}{dx}\\right)+q_0e^{-\\beta x}=0",
+    "T(x)=T_0+\\frac{q_0}{k_0\\beta^2}(1-e^{-\\beta x})-C_1x",
+    "\\overline{T}=\\frac{1}{L}\\int_0^L T(x)\\,dx"
+  ],
+  "18": [
+    "\\frac{d^2y}{dx^2}+2\\zeta\\omega_0\\frac{dy}{dx}+\\omega_0^2y=F_0\\cos(\\Omega x)",
+    "\\omega_d=\\omega_0\\sqrt{1-\\zeta^2}",
+    "y_h(x)=e^{-\\zeta\\omega_0x}\\left(C_1\\cos(\\omega_dx)+C_2\\sin(\\omega_dx)\\right)"
+  ],
+  "19": [
+    "\\Phi_i(x)=\\frac{d}{dx}\\int_{a_i}^{b_i(x)}U_i(x,y)\\,dy",
+    "\\Phi_i(x)=\\int_{a_i}^{b_i(x)}\\frac{\\partial U_i}{\\partial x}\\,dy+U_i(x,b_i(x))\\frac{db_i}{dx}",
+    "\\overline{U}_i(x)=\\frac{1}{b_i(x)-a_i}\\int_{a_i}^{b_i(x)}U_i(x,y)\\,dy"
+  ],
+  "20": [
+    "\\frac{\\partial c}{\\partial t}+v_0\\frac{\\partial c}{\\partial x}=D\\frac{\\partial^2c}{\\partial x^2}",
+    "J(x,t)=v_0c-D\\frac{\\partial c}{\\partial x}",
+    "M(t)=\\int_0^L c(x,t)\\,dx,\\qquad \\frac{dM}{dt}=J(0,t)-J(L,t)"
+  ],
+  "21": [
+    "u_N(x)=\\sum_{j=0}^Na_j\\cos\\left(\\frac{j\\pi x}{L}\\right)",
+    "\\frac{du_N}{dx}=-\\sum_{j=1}^N\\frac{j\\pi a_j}{L}\\sin\\left(\\frac{j\\pi x}{L}\\right)",
+    "a_j=\\frac{2}{L}\\int_0^Lf(x)\\cos\\left(\\frac{j\\pi x}{L}\\right)\\,dx,\\quad j\\geq1"
+  ],
+  "22": [
+    "\\frac{d}{dx}\\left(EI\\frac{d^2w}{dx^2}\\right)=V(x)",
+    "M(x)=-EI\\frac{d^2w}{dx^2},\\qquad V(x)=-\\frac{dM}{dx}",
+    "w(x)=w(0)+xw^{\\prime}(0)-\\int_0^x\\frac{(x-s)M(s)}{EI}\\,ds"
+  ],
+  "23": [
+    "\\frac{dp}{dr}=\\rho\\omega^2r",
+    "p(r)=p_0+\\frac{\\rho\\omega^2}{2}(r^2-r_0^2)",
+    "F=2\\pi\\int_{r_0}^{R}p(r)r\\,dr"
+  ],
+  "24": [
+    "\\frac{d^2C}{dx^2}-\\lambda^2C=0",
+    "C(x)=C_0\\frac{\\sinh(\\lambda(L-x))}{\\sinh(\\lambda L)}",
+    "J(0)=-D\\left.\\frac{dC}{dx}\\right|_{x=0}=DC_0\\lambda\\frac{\\cosh(\\lambda L)}{\\sinh(\\lambda L)}"
+  ],
+  "25": [
+    "\\rho c_p\\frac{\\partial T}{\\partial t}=k\\left(\\frac{\\partial^2T}{\\partial x^2}+\\frac{\\partial^2T}{\\partial y^2}\\right)+q_v",
+    "\\alpha=\\frac{k}{\\rho c_p},\\qquad \\theta=\\frac{T-T_0}{T_s-T_0}",
+    "\\overline{T}(t)=\\frac{1}{ab}\\int_0^a\\int_0^bT(x,y,t)\\,dy\\,dx"
+  ],
+  "26": [
+    "\\frac{dy}{dx}=\\frac{x+y}{x-y},\\qquad x\\ne y",
+    "z=\\frac{y}{x},\\qquad \\frac{dy}{dx}=z+x\\frac{dz}{dx}",
+    "\\int\\frac{1-z}{1+z^2}\\,dz=\\ln|x|+C"
+  ],
+  "27": [
+    "a_iu_{i-1}+b_iu_i+c_iu_{i+1}=f_i,\\qquad i=1,\\ldots,N-1",
+    "\\alpha_i=-\\frac{c_i}{b_i+a_i\\alpha_{i-1}}",
+    "\\beta_i=\\frac{f_i-a_i\\beta_{i-1}}{b_i+a_i\\alpha_{i-1}},\\qquad u_i=\\alpha_iu_{i+1}+\\beta_i"
+  ],
+  "28": [
+    "\\frac{du}{dt}=-\\gamma u+F_0e^{-\\beta t},\\qquad \\gamma\\ne\\beta",
+    "u(t)=u_0e^{-\\gamma t}+\\frac{F_0}{\\gamma-\\beta}\\left(e^{-\\beta t}-e^{-\\gamma t}\\right)",
+    "S(t)=\\int_0^tu(\\tau)\\,d\\tau"
+  ],
+  "29": [
+    "\\frac{1}{r}\\frac{d}{dr}\\left(r\\frac{dT}{dr}\\right)=-\\frac{q_v}{k},\\qquad r>0",
+    "T(r)=T_s+\\frac{q_v}{4k}(R^2-r^2)",
+    "\\overline{T}=\\frac{2}{R^2}\\int_0^RT(r)r\\,dr=T_s+\\frac{q_vR^2}{8k}"
+  ],
+  "30": [
+    "R_N(x)=f(x)-\\sum_{j=0}^{N}a_jx^j",
+    "I(a_0,\\ldots,a_N)=\\int_0^1R_N^2(x)\\,dx",
+    "\\frac{\\partial I}{\\partial a_k}=-2\\int_0^1R_N(x)x^k\\,dx=0,\\qquad k=0,\\ldots,N"
+  ],
+  "31": [
+    "\\rho_i\\frac{U_i^{n+1}-U_i^n}{\\Delta t}=\\mu\\frac{U_{i+1}^n-2U_i^n+U_{i-1}^n}{(\\Delta y)^2}+F_i^n",
+    "U_i^{n+1}=(1-2r_i)U_i^n+r_i(U_{i-1}^n+U_{i+1}^n)+\\frac{\\Delta t}{\\rho_i}F_i^n",
+    "r_i=\\frac{\\mu\\Delta t}{\\rho_i(\\Delta y)^2},\\qquad 0\\leq r_i\\leq\\frac{1}{2}"
+  ]
+}
