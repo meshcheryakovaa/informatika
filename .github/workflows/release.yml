@@ -1,0 +1,43 @@
+name: Build and release HTML
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Version tag to publish (for example v1.0.1); leave empty for build only'
+        required: false
+        type: string
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build single HTML
+        run: python scripts/build.py
+      - name: Verify build
+        run: python scripts/check.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: informatika-html
+          path: dist/informatika_all_in_one.html
+          if-no-files-found: error
+      - name: Publish release
+        if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.tag != '')
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ inputs.tag || github.ref_name }}
+        run: |
+          if ! gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
+            gh release create "$RELEASE_TAG" --target "$GITHUB_SHA" --title "$RELEASE_TAG" --notes "Готовый HTML: скачайте informatika_all_in_one.html и откройте в браузере."
+          fi
+          gh release upload "$RELEASE_TAG" dist/informatika_all_in_one.html --clobber

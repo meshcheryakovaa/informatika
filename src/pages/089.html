@@ -1,0 +1,125 @@
+<section class="page-section" id="page-089" data-title="ЛР27. Работа с базой данных в SQL-тренажёре"><div class="page-meta"><span>Информатика/ЛР27 Работа с базой данных в SQL-тренажёре 356f715e19bd8036bfb2d575795232a2</span><a href="#page-000" class="home-link" data-page-target="page-000">Оглавление</a></div><article class="page sans" data-notion-page-icon="🔴" id="356f715e-19bd-8036-bfb2-d575795232a2"><header><div class="page-header-icon undefined"><span class="icon" data-emoji="🔴"></span></div><h1 class="page-title" dir="auto">ЛР27. <strong>Работа с базой данных в SQL-тренажёре</strong></h1><p class="page-description" dir="auto"></p></header><div class="page-body"><p class="" dir="auto" id="356f715e-19bd-80df-9ddf-c05bbc3b42ed"><strong>Ресурс:</strong> <a href="https://sql-academy.org/ru/trainer">https://sql-academy.org/ru/trainer</a></p><h2 class="" dir="auto" id="356f715e-19bd-8038-82cb-da8bc01683bb"><strong>2. Теоретическая справка</strong></h2><h3 class="" dir="auto" id="356f715e-19bd-802b-9445-f149b85ca80a"><strong>2.1. Что такое база данных</strong></h3><p class="" dir="auto" id="356f715e-19bd-800f-b2ad-fea687aa71ff"><strong>База данных (БД)</strong> — это организованная структура для хранения информации.</p><p class="" dir="auto" id="356f715e-19bd-8068-b512-cc9fe387b7ba">В реляционных БД данные представлены в виде таблиц.</p><p class="" dir="auto" id="356f715e-19bd-80a4-a24b-dfa5785fa514">Каждая таблица состоит из:</p><ul class="bulleted-list" dir="auto" id="356f715e-19bd-8028-86c4-ff64fe18ec8a"><li style="list-style-type:disc"><strong>строк (записей)</strong> — конкретные объекты</li></ul><ul class="bulleted-list" dir="auto" id="356f715e-19bd-80b2-a563-c6f943e309b5"><li style="list-style-type:disc"><strong>столбцов (полей)</strong> — характеристики объектов</li></ul><hr dir="auto" id="356f715e-19bd-8098-a309-f3568a25d136"/><h3 class="" dir="auto" id="356f715e-19bd-80d5-a721-f125271d2527"><strong>2.2. Основной SQL-запрос</strong></h3><p class="" dir="auto" id="356f715e-19bd-8074-9393-f57c7e6ee3ea">Базовый синтаксис:</p><pre class="code code-wrap" id="356f715e-19bd-8038-9ad3-f5899ce96e08"><code style="white-space:pre-wrap;word-break:break-all">SELECT поле1, поле2
+FROM таблица
+WHERE условие;</code></pre><hr dir="auto" id="356f715e-19bd-802a-ae91-d391168ce52b"/><h3 class="" dir="auto" id="356f715e-19bd-8051-aa63-eb221c7771dc"><strong>2.3. Основные операторы</strong></h3><h3 class="" dir="auto" id="356f715e-19bd-80b6-9041-dd34bea468cf"><strong>SELECT</strong></h3><p class="" dir="auto" id="356f715e-19bd-80de-9951-d2c5ad35b3a6">Выбирает данные:</p><pre class="code code-wrap" id="356f715e-19bd-8064-b6d3-d121848525cb"><code style="white-space:pre-wrap;word-break:break-all">SELECT name
+FROM Company;</code></pre><hr dir="auto" id="356f715e-19bd-80dc-bb82-e8c58b1e6ca7"/><h3 class="" dir="auto" id="356f715e-19bd-80d9-a0e6-ef0ac518410b"><strong>WHERE</strong></h3><p class="" dir="auto" id="356f715e-19bd-8050-b200-d2f315b9cc5a">Фильтрация данных:</p><pre class="code code-wrap" id="356f715e-19bd-8054-8eca-c0104fc89b99"><code style="white-space:pre-wrap;word-break:break-all">SELECT*
+FROM Trip
+WHERE town_from='Moscow';</code></pre><hr dir="auto" id="356f715e-19bd-8050-87ab-d32aa55076e8"/><h3 class="" dir="auto" id="356f715e-19bd-80af-aa34-f71a3d7d941e"><strong>LIKE</strong></h3><p class="" dir="auto" id="356f715e-19bd-8097-b906-c11a59072036">Поиск по шаблону:</p><pre class="code code-wrap" id="356f715e-19bd-8037-a86a-ed133753d5dd"><code style="white-space:pre-wrap;word-break:break-all">SELECT name
+FROM Passenger
+WHERE name LIKE'%man';</code></pre><ul class="bulleted-list" dir="auto" id="356f715e-19bd-80e7-a776-d2cabba14fa5"><li style="list-style-type:disc"><code>%</code> — любое количество символов</li></ul><ul class="bulleted-list" dir="auto" id="356f715e-19bd-80ca-8e5e-ce376335aa82"><li style="list-style-type:disc"><code>_</code> — один символ</li></ul><hr dir="auto" id="356f715e-19bd-80c4-937b-f5edacbaa606"/><h3 class="" dir="auto" id="356f715e-19bd-80d9-b430-db5b598a7941"><strong>COUNT()</strong></h3><p class="" dir="auto" id="356f715e-19bd-8060-9c0a-d538a12b9413">Агрегатная функция для подсчёта:</p><pre class="code code-wrap" id="356f715e-19bd-8077-8e5e-db3fbd03f461"><code style="white-space:pre-wrap;word-break:break-all">SELECT COUNT(*)
+FROM Trip;</code></pre><p class="" dir="auto" id="356f715e-19bd-80ed-946f-f940be7d9f0b">С псевдонимом:</p><pre class="code code-wrap" id="356f715e-19bd-80d4-817a-ca8fac52aea9"><code style="white-space:pre-wrap;word-break:break-all">SELECT COUNT(*) AS count
+FROM Trip;</code></pre><hr dir="auto" id="356f715e-19bd-806d-80db-ca03d822b634"/><h3 class="" dir="auto" id="356f715e-19bd-802a-9254-e6aec36c6f17"><strong>JOIN</strong></h3><p class="" dir="auto" id="356f715e-19bd-800c-bc58-ecbecaa0f174">Соединение таблиц:</p><pre class="code code-wrap" id="356f715e-19bd-804d-8115-e17235aaf602"><code style="white-space:pre-wrap;word-break:break-all">SELECT Company.name
+FROM Company
+JOIN TripON Company.id= Trip.company;</code></pre><hr dir="auto" id="356f715e-19bd-808d-9dab-ca80372df480"/><h3 class="" dir="auto" id="356f715e-19bd-80a6-94cb-f3d158f6686d"><strong>DISTINCT</strong></h3><p class="" dir="auto" id="356f715e-19bd-8016-8a63-d843a058a90f">Убирает дубликаты:</p><pre class="code code-wrap" id="356f715e-19bd-805e-952e-d9931ff8ed3d"><code style="white-space:pre-wrap;word-break:break-all">SELECT DISTINCT plane
+FROM Trip;</code></pre><hr dir="auto" id="356f715e-19bd-80b6-b26e-f9e3bb192adf"/><h2 class="" dir="auto" id="356f715e-19bd-8006-b55c-e2d8aa918adb"><strong>3. Описание базы данных</strong></h2><p class="" dir="auto" id="356f715e-19bd-80d8-927e-cd37876f36c4">В тренажёре используется база данных авиаперевозок. Основные таблицы:</p><ul class="bulleted-list" dir="auto" id="356f715e-19bd-80c0-988f-cc60c921ae6d"><li style="list-style-type:disc"><strong>Company</strong> — авиакомпании</li></ul><ul class="bulleted-list" dir="auto" id="356f715e-19bd-801a-9be8-e3d6bf319985"><li style="list-style-type:disc"><strong>Trip</strong> — рейсы</li></ul><ul class="bulleted-list" dir="auto" id="356f715e-19bd-804d-af31-e5a8f6595a78"><li style="list-style-type:disc"><strong>Passenger</strong> — пассажиры</li></ul><ul class="bulleted-list" dir="auto" id="356f715e-19bd-801d-aa4b-d3bff30c54cd"><li style="list-style-type:disc"><strong>Pass_in_trip</strong> — участие пассажиров в рейсах</li></ul><aside class="block-color-teal_background callout" data-notion-callout="" data-notion-callout-background="teal_background" data-notion-callout-icon="💡" dir="ltr" id="356f715e-19bd-802a-8b46-ce23b43a6791" style="white-space:pre-wrap;display:flex"><div style="font-size:1.5em"><span class="icon" data-emoji="💡"></span></div><div style="width:100%"><p class="" dir="auto" id="356f715e-19bd-8057-b0d5-faa37cefe210">Для помощи ИИ в решении ЛР1 вы можете отправить ему структуру вашей БД из тренажера</p><pre class="code code-wrap" data-notion-code-syntax="jsx" id="356f715e-19bd-8030-80a9-fbeffaca854e"><code class="language-jsx" style="white-space:pre-wrap;word-break:break-all">{
+  "database": "transport_system",
+  "tables": {
+    "Company": {
+      "description": "Компании-перевозчики",
+      "fields": {
+        "id": {
+          "type": "INT",
+          "primary_key": true
+        },
+        "name": {
+          "type": "VARCHAR"
+        }
+      }
+    },
+    "Trip": {
+      "description": "Поездки (рейсы)",
+      "fields": {
+        "id": {
+          "type": "INT",
+          "primary_key": true
+        },
+        "company": {
+          "type": "INT",
+          "foreign_key": {
+            "references": "Company.id"
+          }
+        },
+        "plane": {
+          "type": "VARCHAR"
+        },
+        "town_from": {
+          "type": "VARCHAR"
+        },
+        "town_to": {
+          "type": "VARCHAR"
+        },
+        "time_out": {
+          "type": "DATETIME"
+        },
+        "time_in": {
+          "type": "DATETIME"
+        }
+      }
+    },
+    "Passenger": {
+      "description": "Пассажиры",
+      "fields": {
+        "id": {
+          "type": "INT",
+          "primary_key": true
+        },
+        "name": {
+          "type": "VARCHAR"
+        }
+      }
+    },
+    "Pass_in_trip": {
+      "description": "Связь пассажиров и поездок",
+      "fields": {
+        "id": {
+          "type": "INT",
+          "primary_key": true
+        },
+        "trip": {
+          "type": "INT",
+          "foreign_key": {
+            "references": "Trip.id"
+          }
+        },
+        "passenger": {
+          "type": "INT",
+          "foreign_key": {
+            "references": "Passenger.id"
+          }
+        },
+        "place": {
+          "type": "VARCHAR"
+        }
+      }
+    }
+  },
+  "relationships": [
+    {
+      "type": "one-to-many",
+      "from": "Company",
+      "to": "Trip",
+      "description": "Одна компания выполняет много поездок"
+    },
+    {
+      "type": "many-to-many",
+      "from": "Trip",
+      "to": "Passenger",
+      "via": "Pass_in_trip",
+      "description": "Пассажиры участвуют в поездках"
+    }
+  ]
+}</code></pre><p class="" dir="auto" id="356f715e-19bd-805a-bbf9-d99ad90660ac">
+</p></div></aside><h3 class="" dir="auto" id="356f715e-19bd-8088-acdc-d174db4ad120"><strong>Задание 1</strong></h3><p class="" dir="auto" id="356f715e-19bd-80b2-9a38-cb6f5b6540ff"><strong>Вывести названия всех авиакомпаний</strong></p><pre class="code code-wrap" id="356f715e-19bd-8087-8c43-efec3882d000"><code style="white-space:pre-wrap;word-break:break-all">SELECT name
+FROM Company;</code></pre><hr dir="auto" id="356f715e-19bd-803b-9961-c4d0395e4c8c"/><h3 class="" dir="auto" id="356f715e-19bd-803b-8684-cfea952f2f91"><strong>Задание 2</strong></h3><p class="" dir="auto" id="356f715e-19bd-801a-96b9-fc27bc043bd0"><strong>Вывести все рейсы, совершенные из Москвы</strong></p><pre class="code code-wrap" id="356f715e-19bd-800a-ba73-c38ac4b6082b"><code style="white-space:pre-wrap;word-break:break-all">SELECT *
+FROM Trip
+WHERE town_from='Moscow';</code></pre><hr dir="auto" id="356f715e-19bd-8013-9dd6-f7c92392beca"/><h3 class="" dir="auto" id="356f715e-19bd-80de-b965-f29ef07235b9"><strong>Задание 3</strong></h3><p class="" dir="auto" id="356f715e-19bd-8024-97be-c66b8f15ceaa"><strong>Вывести имена людей, которые заканчиваются на "man"</strong></p><pre class="code code-wrap" id="356f715e-19bd-8051-92da-f5899de13d23"><code style="white-space:pre-wrap;word-break:break-all">SELECT name
+FROM Passenger
+WHERE name LIKE'%man';</code></pre><hr dir="auto" id="356f715e-19bd-80be-bb84-deee96016d59"/><h3 class="" dir="auto" id="356f715e-19bd-8022-bdd3-eb859df055ec"><strong>Задание 4</strong></h3><p class="" dir="auto" id="356f715e-19bd-803c-9996-d63978fff4ec"><strong>Вывести количество рейсов, совершенных на TU-134</strong></p><p class="" dir="auto" id="356f715e-19bd-8085-b700-ee1e1670e7f6"><em>(обязательно использовать </em><em><code>AS count</code></em><em>)</em></p><pre class="code code-wrap" id="356f715e-19bd-8049-9440-c399d23b4f8b"><code style="white-space:pre-wrap;word-break:break-all">SELECT COUNT(*) AS count
+FROM Trip
+WHERE plane='TU-134';</code></pre><hr dir="auto" id="356f715e-19bd-806f-b27b-fc0423cf9fea"/><h3 class="" dir="auto" id="356f715e-19bd-8093-9154-f321dc3d2ab7"><strong>Задание 5</strong></h3><p class="" dir="auto" id="356f715e-19bd-80db-b1ae-f7e3fd8df81d"><strong>Какие компании совершали перелеты на Boeing</strong></p><pre class="code code-wrap" id="356f715e-19bd-80d1-8c3c-ffed1695c674"><code style="white-space:pre-wrap;word-break:break-all">SELECT DISTINCT Company.name
+FROM Company
+JOIN Trip ON Company.id= Trip.company
+WHERE Trip.plane LIKE 'Boeing%';</code></pre><hr dir="auto" id="356f715e-19bd-8069-a182-e1ba3641b794"/><h3 class="" dir="auto" id="356f715e-19bd-80e9-b674-c45695561908"><strong>Задание 6</strong></h3><p class="" dir="auto" id="356f715e-19bd-8017-af21-e453c036cdc8"><strong>Вывести все названия самолётов, на которых можно улететь в Москву</strong></p><pre class="code code-wrap" id="356f715e-19bd-8085-8f09-cbc86d8abc7b"><code style="white-space:pre-wrap;word-break:break-all">SELECT DISTINCT plane
+FROM Trip
+WHERE town_to='Moscow';</code></pre><hr dir="auto" id="356f715e-19bd-8065-92d4-fd422afdd700"/><h3 class="" dir="auto" id="356f715e-19bd-8032-b82e-f4093eb92aff"><strong>Задание 7</strong></h3><p class="" dir="auto" id="356f715e-19bd-8044-b4f0-caea233af20a"><strong>Вывести имена всех людей, которые есть в базе данных авиакомпаний</strong></p><pre class="code code-wrap" id="356f715e-19bd-8097-ac74-c401ce5b2e9e"><code style="white-space:pre-wrap;word-break:break-all">SELECT name
+FROM Passenger;</code></pre><hr dir="auto" id="356f715e-19bd-80c3-bdc3-e5bf33f24583"/><h3 class="" dir="auto" id="356f715e-19bd-80a3-b770-e244ac43317c"><strong>Задание 8</strong></h3><p class="" dir="auto" id="356f715e-19bd-80dd-8fca-c4151014b045"><strong>В какие города летал Bruce Willis</strong></p><pre class="code code-wrap" id="356f715e-19bd-8063-a2c2-ec3a888a4cd6"><code style="white-space:pre-wrap;word-break:break-all"></code></pre><hr dir="auto" id="356f715e-19bd-802f-812c-f388abaa94b0"/><h3 class="" dir="auto" id="356f715e-19bd-80ad-8824-e1bc86996681"><strong>Задание 9</strong></h3><p class="" dir="auto" id="356f715e-19bd-80a7-9fdb-e2672bdf219b"><strong>Выведите идентификатор пассажира Стив Мартин и дату и время его прилёта в Лондон</strong></p><pre class="code code-wrap" id="356f715e-19bd-801d-947f-c53eae974f7b"><code style="white-space:pre-wrap;word-break:break-all"></code></pre><hr dir="auto" id="356f715e-19bd-8021-95a7-c858bec91b88"/><h2 class="" dir="auto" id="356f715e-19bd-80ca-9028-ee37e1607712"><strong>5. Контрольные вопросы</strong></h2><ol class="numbered-list" dir="auto" id="356f715e-19bd-805a-a500-cd95eafac26c" start="1" type="1"><li>Что делает оператор <code>SELECT</code>?</li></ol><ol class="numbered-list" dir="auto" id="356f715e-19bd-8025-b863-eb9c987125e5" start="2" type="1"><li>Для чего используется <code>WHERE</code>?</li></ol><ol class="numbered-list" dir="auto" id="356f715e-19bd-8035-8b57-f216932bd5eb" start="3" type="1"><li>В чём разница между <code>=</code> и <code>LIKE</code>?</li></ol><ol class="numbered-list" dir="auto" id="356f715e-19bd-8079-8a61-c274a2b7d8b0" start="4" type="1"><li>Что делает функция <code>COUNT()</code>?</li></ol><ol class="numbered-list" dir="auto" id="356f715e-19bd-8029-ae8f-e0da691e07e1" start="5" type="1"><li>Зачем нужен <code>JOIN</code>?</li></ol><ol class="numbered-list" dir="auto" id="356f715e-19bd-80e1-ba1d-f04787ecf9f8" start="6" type="1"><li>Что такое <code>DISTINCT</code>?</li></ol><p class="" dir="auto" id="356f715e-19bd-800c-a485-dd9beda1e126">
+</p></div></article></section>
